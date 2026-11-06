@@ -3,24 +3,22 @@
 using namespace std;
 
 int main() {
-    TreeNode* root = new TreeNode(5);
+    BinarySearchTree bst;
+    // 建一棵树: 
+    //       5
+    //     /   \
+    //    3     8
+    //   / \   / \
+    //  1   4 7   9
+    int arr[] = {5, 3, 8, 1, 4, 7, 9};
+    for (int x : arr) bst.insert(x);
+
+    cout << "前序遍历: "; bst.preOrder();
+    cout << "中序遍历: "; bst.inOrder();
+    cout << "后序遍历: "; bst.postOrder();
     
-    root->insert(3);
-    root->insert(8);
-    root->insert(2);
-    root->insert(4);
-
-    cout << "PreOrder: ";
-    root->preOrder();
-    cout << endl;
-
-    cout << "InOrder: ";
-    root->inOrder();
-    cout << endl;
-
-    cout << "PostOrder: ";
-    root->postOrder();
-    cout << endl;
+    cout << "树的高度: " << bst.getHeight() << endl;
+    cout << "节点总数: " << bst.size() << endl;
 
     return 0;
 }

@@ -1,15 +1,10 @@
 #pragma once
+#include "binary_tree.h"
 
-class TreeNode {
+class BinarySearchTree : public BinaryTree {
 public:
-    int data;
-    TreeNode* left;
-    TreeNode* right;
-
-    TreeNode(int a) : data(a), left(nullptr), right(nullptr) {}
-
-    void insert(int data);
-    void preOrder();
-    void inOrder();
-    void postOrder();
+    void insert(int val);
+    
+protected:
+    void insert(TreeNode*& node, int val);
 };
