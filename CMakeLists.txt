@@ -22,3 +22,12 @@ add_executable(run_list
 )
 
 target_include_directories(run_list PRIVATE linked_list/include)
+
+
+# ====== sorting ======
+add_executable(run_sort 
+    sorting/main.cpp 
+    sorting/src/sorts.cpp
+)
+
+target_include_directories(run_sort PRIVATE sorting/include)
