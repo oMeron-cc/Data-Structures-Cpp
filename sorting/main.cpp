@@ -28,5 +28,9 @@ int main() {
     quickSort(arr4);
     cout << "快速排序: "; printArray(arr4);
 
+    vector<int> arr5 = origin;
+    heapSort(arr5);
+    cout << "堆排序: "; printArray(arr5);
+
     return 0;
 }

@@ -6,3 +6,4 @@
 
 *   `binary_tree/`：二叉树与二叉搜索树（BST）
 *   `linked_list/`：单链表
+*   `sorting/`：排序算法

@@ -93,3 +93,38 @@ void quickSortHelper(vector<int>& a, int left, int right){
 void quickSort(vector<int>& arr) {
     quickSortHelper(arr, 0, arr.size() - 1);
 }
+
+
+
+//堆排序
+void siftDown(vector<int>& a, int i, int n) {
+    while (true) {
+        int largest = i;
+        int left = 2 * i + 1;
+        int right = 2 * i + 2;
+
+        if (left < n && a[left] > a[largest]) {
+            largest = left;
+        }
+        if (right < n && a[right] > a[largest]) {
+            largest = right;
+        }
+
+        if (largest == i) break;
+        swap(a[i], a[largest]);
+        i = largest; 
+    }
+}
+
+void heapSort(vector<int>& a) {
+    int n = a.size();
+
+    for (int i = n / 2 - 1; i >= 0; i--) {
+        siftDown(a, i, n);
+    }
+
+    for (int i = n - 1; i > 0; i--) {
+        swap(a[0], a[i]);
+        siftDown(a, 0, i);
+    }
+}
